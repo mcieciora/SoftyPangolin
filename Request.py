@@ -31,7 +31,6 @@ class Request:
         for key, value in self.call_data.items():
             data_list.append('{}={}'.format(key, value))
         self.url += '&'.join(data_list)
-        self.verify_url()
 
     def verify_url(self):
         if (request := get(self.url)).status_code != 200:
