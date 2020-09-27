@@ -20,16 +20,17 @@ class Parser:
             error("Error: path '{}' is not valid.".format(path))
             self.__file = None
 
-    def read_ini(self, expression):
+    def read_ini(self, section):
+        data_dict = {}
         if self.file is not None:
             config = ConfigParser()
             config.read(self.file)
-            data_dict = {}
-            for section in config.sections():
-                if section.lower() == expression:
-                    for key, value in config[section].items():
-                        data_dict[key] = value
-            return data_dict
+            try:
+                for key, value in config[section].items():
+                    data_dict[key] = value
+                return data_dict
+            except (KeyError, AttributeError):
+                error("Error: Wrong section name - {}".format(section))
         else:
             error("Error: Cannot find file {}.".format(self.file))
 
