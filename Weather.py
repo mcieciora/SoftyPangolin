@@ -45,6 +45,7 @@ class Weather:
                     self.request[key] = str(self.request[key]) + units[key]
                 else:
                     self.request.pop(key)
-            Parser.save_data(self.request, 'data/weather.ini')
+            weather_ini = Parser('data/weather.ini')
+            weather_ini.save_data(self.request)
         else:
             error("ERROR: Nothing to parse. Request return is empty!")

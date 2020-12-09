@@ -20,17 +20,17 @@ class Parser:
             error("Error: path '{}' is not valid.".format(path))
             self.__file = None
 
-    def read_ini(self, section):
+    def read_ini(self):
         data_dict = {}
         if self.file is not None:
             config = ConfigParser()
             config.read(self.file)
             try:
-                for key, value in config[section].items():
+                for key, value in config['DEFAULT'].items():
                     data_dict[key] = value
                 return data_dict
             except (KeyError, AttributeError):
-                error("Error: Wrong section name - {}".format(section))
+                error("Error: Wrong section name - {}".format('DEFAULT'))
         else:
             error("Error: Cannot find file {}.".format(self.file))
 
@@ -45,9 +45,8 @@ class Parser:
         else:
             error("Error: Cannot find file {}.".format(self.file))
 
-    @staticmethod
-    def save_data(data, file):
+    def save_data(self, data):
         config = ConfigParser()
         config['DEFAULT'] = data
-        with open(file, 'w') as configfile:
+        with open(self.file, 'w') as configfile:
             config.write(configfile)

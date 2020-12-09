@@ -38,6 +38,7 @@ class Request:
         else:
             info("[INFO] '{}' has been verified.".format(self.url))
             self.__is_verified = True
+            return True
 
     def send(self):
         if self.__is_verified:
@@ -45,6 +46,6 @@ class Request:
             request = get(self.url)
             if request.status_code == 200:
                 info('[SUCCESS] Code 200 received.')
-                return request.json()['current']
+                return request
         else:
             error("[ERR] Cannot send '{}' request, url or data is not valid.".format(self.url))
