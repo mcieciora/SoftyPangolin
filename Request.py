@@ -1,5 +1,5 @@
 from requests import get
-from logging import info, error
+from logging import info
 
 
 class Request:
@@ -32,20 +32,6 @@ class Request:
             data_list.append('{}={}'.format(key, value))
         self.url += '&'.join(data_list)
 
-    def verify_url(self):
-        if (request := get(self.url)).status_code != 200:
-            error('Error {}: {} at {}. Url or data is not valid.'.format(request.status_code, request.reason, self.url))
-        else:
-            info("[INFO] '{}' has been verified.".format(self.url))
-            self.__is_verified = True
-            return True
-
     def send(self):
-        if self.__is_verified:
-            info("[INFO] Sending '{}' request...")
-            request = get(self.url)
-            if request.status_code == 200:
-                info('[SUCCESS] Code 200 received.')
-                return request
-        else:
-            error("[ERR] Cannot send '{}' request, url or data is not valid.".format(self.url))
+        info("[INFO] Sending '{}' request...")
+        return get(self.url)

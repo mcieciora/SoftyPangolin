@@ -2,12 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="300; URL=http://127.0.0.1:5000/">
+    <meta http-equiv="refresh" content="60; URL=http://127.0.0.1:5000/">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'styles/style.css') }}">
     <title>Softy Pangolin</title>
 </head>
-<body>
-    {% for k, v in data.items() %}
-    <p><center>{{k}}: {{v}}</center></p>
-    {% endfor %}
-</body>
+    <body>
+        <div class="time">Pogoda o {{data['date']}}</div>
+        <div class="row sunrise">
+            <div class="suntime">Wschód {{data['sunrise']}}</div>
+            <div class="suntime">Zachód {{data['sunset']}}</div>
+        </div>
+        <div class="temperature h1">Temperatura {{data['temp']}}</div>
+        <div class="temperature h2">Odczuwalna {{data['feels_like']}}</div>
+        <div class="description">{{data['weather']}}</div>
+        <div class="other">{{data['pressure']}}</div>
+        <div class="row other">
+            <div class="other">Siła wiatru {{data['wind_speed']}}</div>
+            <div class="other">Zachmurzenie {{data['clouds']}}</div>
+            <div class="other">Wilgotność {{data['humidity']}}</div>
+        </div>
+    </body>
 </html>

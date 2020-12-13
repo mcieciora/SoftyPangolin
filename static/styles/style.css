@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Bahnschrift;
+    background-color: white;
+    text-align: center;
+}
+
+.other{
+	font-size: 22px;
+	color: black;
+}
+
+.time {
+	margin-top : 50px;
+    font-size: 26px;
+    font-weight: normal;
+    color: black;
+}
+
+.temperature.h1 {
+	margin-top : 75px;
+    font-size: 40px;
+    font-weight: normal;
+    color: black;
+}
+
+.temperature.h2 {
+	font-size: 30px;
+    font-weight: normal;
+    color: #B0B0B0;
+    height: 50px
+}
+
+.description {
+	margin-top : 50px;
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+}
+
+.row.other {
+	margin-top: 50px;
+	color: black;
+    font-size: 18px;
+	columns: 50px 3;
+}
+
+.row.sunrise {
+	margin-top: 20px;
+	font-size: 20px;
+	color: #B0B0B0;
+	columns: 75px 2;
+}
+
+@media (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}

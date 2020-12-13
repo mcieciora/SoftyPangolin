@@ -23,7 +23,7 @@ class Weather:
             self.request['weather'] = self.request['weather'][0]['description'].capitalize()
             self.request['sunrise'] = datetime.fromtimestamp(self.request['sunrise']).strftime('%H:%M')
             self.request['sunset'] = datetime.fromtimestamp(self.request['sunset']).strftime('%H:%M')
-            self.request['date'] = datetime.now().strftime('%d-%m-%Y %H:%M')
+            self.request['date'] = datetime.now().strftime('%H:%M')
 
             units = {
                 'temp': '°C',
@@ -48,4 +48,4 @@ class Weather:
             weather_ini = Parser('data/weather.ini')
             weather_ini.save_data(self.request)
         else:
-            error("ERROR: Nothing to parse. Request return is empty!")
+            error("Error: Nothing to parse. Request return is empty!")
