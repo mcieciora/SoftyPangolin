@@ -7,19 +7,22 @@
     <title>Softy Pangolin</title>
 </head>
     <body>
-        <div class="time">Pogoda o {{data['date']}}</div>
+        <div class="time">Pogoda o {{ data['date'] }}</div>
         <div class="row sunrise">
-            <div class="suntime">Wschód {{data['sunrise']}}</div>
-            <div class="suntime">Zachód {{data['sunset']}}</div>
+            <div class="suntime">Wschód<br>{{ data['sunrise'] }}</div>
+            <div class="suntime">Zachód<br>{{ data['sunset'] }}</div>
         </div>
-        <div class="temperature h1">Temperatura {{data['temp']}}</div>
-        <div class="temperature h2">Odczuwalna {{data['feels_like']}}</div>
-        <div class="description">{{data['weather']}}</div>
-        <div class="other">{{data['pressure']}}</div>
+        <div class="temperature h1">Temperatura {{ data['temp'] }}</div>
+        <div class="temperature h2">Odczuwalna {{ data['feels_like'] }}</div>
+        <div>
+            <img src="{{url_for('static', filename=data['icon'])}}" alt="weather_icon" style="width:200px;height:200px">
+        </div>
+        <div class="description">{{ data['weather'] }}</div>
+        <div class="other">{{ data['pressure'] }}</div>
         <div class="row other">
-            <div class="other">Siła wiatru {{data['wind_speed']}}</div>
-            <div class="other">Zachmurzenie {{data['clouds']}}</div>
-            <div class="other">Wilgotność {{data['humidity']}}</div>
+            <div class="other">Siła wiatru<br><i>{{ data['wind_speed'] }}</i></div>
+            <div class="other">Zachmurzenie<br><i>{{ data['clouds'] }}</i></div>
+            <div class="other">Wilgotność<br><i>{{ data['humidity'] }}</i></div>
         </div>
     </body>
 </html>

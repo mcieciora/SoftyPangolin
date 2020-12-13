@@ -31,18 +31,16 @@ body {
 	font-size: 30px;
     font-weight: normal;
     color: #B0B0B0;
-    height: 50px
 }
 
 .description {
-	margin-top : 50px;
     font-size: 26px;
     font-weight: bold;
     color: black;
 }
 
 .row.other {
-	margin-top: 50px;
+    margin-top: 40px;
 	color: black;
     font-size: 18px;
 	columns: 50px 3;

@@ -20,6 +20,7 @@ class Weather:
 
     def parse_weather_data(self):
         if self.request:
+            self.request['icon'] = f"icons/{self.request['weather'][0]['icon'][:2]}.png"
             self.request['weather'] = self.request['weather'][0]['description'].capitalize()
             self.request['sunrise'] = datetime.fromtimestamp(self.request['sunrise']).strftime('%H:%M')
             self.request['sunset'] = datetime.fromtimestamp(self.request['sunset']).strftime('%H:%M')
@@ -35,7 +36,8 @@ class Weather:
                 'weather': '',
                 'sunrise': '',
                 'sunset': '',
-                'date': ''
+                'date': '',
+                'icon': ''
             }
 
             for key in list(self.request):
