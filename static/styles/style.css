@@ -1,47 +1,37 @@
 * {
   box-sizing: border-box;
-}
-
-body {
-    font-family: Bahnschrift;
-    background-color: white;
-    text-align: center;
+  font-family: Bahnschrift;
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
 }
 
 .other{
 	font-size: 22px;
-	color: black;
 }
 
 .time {
-	margin-top : 50px;
+    margin-top: 50px;
     font-size: 26px;
-    font-weight: normal;
-    color: black;
 }
 
 .temperature.h1 {
 	margin-top : 75px;
     font-size: 40px;
-    font-weight: normal;
-    color: black;
 }
 
 .temperature.h2 {
 	font-size: 30px;
-    font-weight: normal;
     color: #B0B0B0;
 }
 
 .description {
     font-size: 26px;
     font-weight: bold;
-    color: black;
 }
 
 .row.other {
-    margin-top: 40px;
-	color: black;
+    margin-top: 70px;
     font-size: 18px;
 	columns: 50px 3;
 }
@@ -53,8 +43,6 @@ body {
 	columns: 75px 2;
 }
 
-@media (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
+.icon{
+    margin-top: 50px
 }

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from flask import Flask, render_template
 from threading import Timer
+from sys import exit
+import requests
 from logging import error
 from Parser import Parser
 from Request import Request
@@ -33,10 +35,14 @@ def get_current_weather():
 
 def get_current_location():
     location = Request('https://ipinfo.io/loc', {})
-    lat, lon = location.send().text.replace('\n', '').split(',')
-    read_ini = config_ini.read_ini()
-    read_ini['lat'], read_ini['lon'] = lat, lon
-    config_ini.save_data(read_ini)
+    try:
+        lat, lon = location.send().text.replace('\n', '').split(',')
+        read_ini = config_ini.read_ini()
+        read_ini['lat'], read_ini['lon'] = lat, lon
+        config_ini.save_data(read_ini)
+    except requests.ConnectionError:
+        error('Error: Please check your internet connection!')
+        exit()
 
 
 app = Flask(__name__)
