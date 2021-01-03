@@ -39,7 +39,7 @@ def get_current_location():
         lat, lon = location.send().text.replace('\n', '').split(',')
         read_ini = config_ini.read_ini()
         read_ini['lat'], read_ini['lon'] = lat, lon
-        config_ini.save_data(read_ini)
+        config_ini.save_ini_data(read_ini)
     except requests.ConnectionError:
         error('Error: Please check your internet connection!')
         exit()
@@ -57,4 +57,4 @@ def index():
 if __name__ == '__main__':
     setup()
     get_current_weather()
-    app.run(host='127.0.0.1', port=5000)
+    app.run(host='0.0.0.0', port=8000)

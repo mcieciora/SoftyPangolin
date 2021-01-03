@@ -45,7 +45,7 @@ class Parser:
         else:
             error("Error: Cannot find file {}.".format(self.file))
 
-    def save_data(self, data):
+    def save_ini_data(self, data):
         config = ConfigParser()
         config['DEFAULT'] = data
         with open(self.file, 'w') as configfile:
