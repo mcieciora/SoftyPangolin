@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="30" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Softy Pangolin</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='/icons/favicon.png') }}">
+</head>
+    <body>
+        <div class="time">Pogoda o {{ data['date'] }}</div>
+        <div class="row sunrise">
+            <div class="suntime">Wschód<br>{{ data['sunrise'] }}</div>
+            <div class="suntime">Zachód<br>{{ data['sunset'] }}</div>
+        </div>
+        <div class="temperature h1">Temperatura {{ data['temp'] }}</div>
+        <div class="temperature h2">Odczuwalna {{ data['feels_like'] }}</div>
+        <div class="icon">
+            <img src="{{url_for('static', filename=data['icon'])}}" alt="weather_icon">
+        </div>
+        <div class="description">{{ data['weather'] }}</div>
+        <div class="other">{{ data['pressure'] }}</div>
+        <div class="row other">
+            <div class="other">Siła wiatru<br><i>{{ data['wind_speed'] }}</i></div>
+            <div class="other">Zachmurzenie<br><i>{{ data['clouds'] }}</i></div>
+            <div class="other">Wilgotność<br><i>{{ data['humidity'] }}</i></div>
+        </div>
+    </body>
+</html>
