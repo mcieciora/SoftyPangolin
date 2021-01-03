@@ -6,3 +6,4 @@
 4. Paste it into config/config.ini line 3 "appid = {your API key}"
 5. Run main.exe in command prompt
 6. To access app from any device in your network you have to open port 8000 on host machine
+7. You can also run this app as service by using sc.exe: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/sc-create
