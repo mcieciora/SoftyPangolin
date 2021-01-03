@@ -1,0 +1,8 @@
+=== SOFTY PANGOLIN ver.1.1c ===
+
+1. Download all files from latest_release directory
+2. Create free account on: https://home.openweathermap.org/users/sign_up
+3. Go to "My API keys" and copy default one or generate new
+4. Paste it into config/config.ini line 3 "appid = {your API key}"
+5. Run main.exe in command prompt
+6. To access app from any device in your network you have to open port 8000 on host machine
