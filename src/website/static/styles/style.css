@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  font-family: Bahnschrift;
+  text-align: center;
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: black;
+  background-color: white;
+}
+
+.other{
+	font-size: 22px;
+}
+
+.weather {
+    max-width: 500px;
+}
+
+.time {
+    margin-top: 50px;
+    font-size: 26px;
+}
+
+.temperature.h1 {
+	margin-top : 75px;
+    font-size: 40px;
+}
+
+.temperature.h2 {
+	font-size: 30px;
+    color: #B0B0B0;
+}
+
+.description {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.row.other {
+    margin-top: 70px;
+    font-size: 18px;
+	columns: 50px 3;
+}
+
+.row.sunrise {
+	margin-top: 20px;
+	font-size: 20px;
+	color: #B0B0B0;
+	columns: 75px 2;
+}
+
+.icon{
+    margin-top: 50px
+}
+
+input[type=text] {
+  width: 15%;
+  padding: 5px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+select {
+  width: 4%;
+  padding: 5px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 16%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.setup{
+  vertical-align: middle;
+}

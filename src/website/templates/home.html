@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content%}
+<div class="weather">
+    <div class="time">{{ lang['text0'] }} {{ data['date'].strftime('%H:%M %d-%m-%Y') }}</div>
+    <div class="row sunrise">
+        <div class="suntime">{{ lang['text1'] }}<br>{{ data['sunrise'] }}</div>
+        <div class="suntime">{{ lang['text2'] }}<br>{{ data['sunset'] }}</div>
+    </div>
+    <div class="temperature h1">{{ lang['text3'] }} {{ data['temp'] }}</div>
+    <div class="temperature h2">{{ lang['text4'] }} {{ data['feels_like'] }}</div>
+    <div class="icon">
+        <img src="{{url_for('static', filename=data['icon'])}}" alt="weather_icon">
+    </div>
+    <div class="description">{{ data['weather'] }}</div>
+    <div class="other">{{ data['pressure'] }}</div>
+    <div class="row other">
+        <div class="other">{{ lang['text5'] }}<br><i>{{ data['wind_speed'] }}</i></div>
+        <div class="other">{{ lang['text6'] }}<br><i>{{ data['clouds'] }}</i></div>
+        <div class="other">{{ lang['text7'] }}<br><i>{{ data['humidity'] }}</i></div>
+    </div>
+</div>
+{% endblock %}
