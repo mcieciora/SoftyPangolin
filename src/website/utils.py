@@ -4,9 +4,9 @@ from threading import Timer
 from sqlalchemy import desc
 from datetime import datetime
 from requests import get, ConnectionError
-from . import db
-from .models import WeatherData
-from website import create_app
+
+from . import db, create_app
+from .models import WeatherData, Settings
 
 
 def get_current_location():
@@ -46,9 +46,7 @@ def get_latest_weather_data():
         'humidity': '%',
         'clouds': '%',
     }
-    weather_data_query = WeatherData.query
-    weather_data_ordered_descending = weather_data_query.order_by(desc(WeatherData.id))
-    latest_weather_data = weather_data_ordered_descending.first().get_dict()
+    latest_weather_data = get_last_data_from_model(WeatherData).get_dict()
     for key in list(units):
         latest_weather_data[key] = str(latest_weather_data[key]) + units[key]
     return latest_weather_data
@@ -59,13 +57,25 @@ def send_weather_request():
     call_data = {
         'units': 'metric',
         'exclude': 'minutely,hourly,daily',
-        'lang': 'pl',
-        'appid': '',
-        'lat': '',
-        'lon': ''
     }
     weather_url = 'https://api.openweathermap.org/data/2.5/onecall?'
-    for key, value in call_data.items():
-        data_list.append('{}={}'.format(key, value))
-    weather_url += '&'.join(data_list)
-    return get(weather_url)
+
+    try:
+        with create_app().app_context():
+            settings_data = get_last_data_from_model(Settings).get_dict()
+            call_data['appid'] = settings_data['appid']
+            call_data['lang'] = settings_data['lang']
+            call_data['lat'], call_data['lon'] = get_current_location()
+
+        for key, value in call_data.items():
+            data_list.append('{}={}'.format(key, value))
+        weather_url += '&'.join(data_list)
+
+        return get(weather_url)
+    except ConnectionError:
+        error('Error: Please check your internet connection!')
+        exit()
+
+
+def get_last_data_from_model(model):
+    return model.query.order_by(desc(model.id)).first()

@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content%}
+<form method="POST">
+  <br/><br/>
+  <label>Application ID:</label>
+  <input type="text" id="appid" name="appid">
+  <br/>
+  <label for="lang">Choose language:</label>
+  <select name="lang" id="lang">
+    <option value="en">en</option>
+    <option value="pl">pl</option>
+    <option value="de">de</option>
+  </select>
+  <br/>
+  <button type="submit">Save</button>
+</form>
+{% endblock %}

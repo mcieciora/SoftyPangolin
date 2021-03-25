@@ -28,7 +28,10 @@ class WeatherData(db.Model):
 
 class Settings(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    app_id = db.Column(db.String(50))
+    appid = db.Column(db.String(50))
     lang = db.Column(db.String(2))
-    latitude = db.Column(db.Integer())
-    longitude = db.Column(db.Integer())
+    lat = db.Column(db.Integer())
+    lon = db.Column(db.Integer())
+
+    def get_dict(self):
+        return vars(self)
