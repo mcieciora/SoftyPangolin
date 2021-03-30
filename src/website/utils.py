@@ -19,7 +19,7 @@ def get_current_location():
 
 
 def get_current_weather():
-    Timer(60, get_current_weather).start()
+    Timer(120, get_current_weather).start()
     if (return_request := send_weather_request()).status_code == 200:
         request = return_request.json()['current']
         if request:
