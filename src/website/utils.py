@@ -10,16 +10,16 @@ from .models import WeatherData, Settings
 
 
 def get_current_location():
-    location = get('https://ipinfo.io/loc')
+    location = get('https://freegeoip.app/json/').json()
     try:
-        return location.text.replace('\n', '').split(',')
+        return location['latitude'], location['longitude']
     except ConnectionError:
         error('Error: Please check your internet connection!')
         exit()
 
 
 def get_current_weather():
-    Timer(120, get_current_weather).start()
+    Timer(90, get_current_weather).start()
     if (return_request := send_weather_request()).status_code == 200:
         request = return_request.json()['current']
         if request:

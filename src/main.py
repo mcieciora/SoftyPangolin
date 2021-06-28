@@ -11,4 +11,4 @@ if __name__ == '__main__':
         latest_settings = get_last_data_from_model(Settings)
         if latest_settings:
             get_current_weather()
-    app.run(use_reloader=False, host='0.0.0.0')
+    app.run(use_reloader=False, host='0.0.0.0', port=8001)
