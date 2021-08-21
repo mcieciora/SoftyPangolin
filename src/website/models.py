@@ -32,6 +32,7 @@ class Settings(db.Model):
     lang = db.Column(db.String(2))
     lat = db.Column(db.Integer())
     lon = db.Column(db.Integer())
+    repeat = db.Column(db.Integer())
 
     def get_dict(self):
         return vars(self)

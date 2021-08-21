@@ -19,7 +19,9 @@ def get_current_location():
 
 
 def get_current_weather():
-    Timer(90, get_current_weather).start()
+    with create_app().app_context():
+        repeat_time = get_last_data_from_model(Settings).get_dict()['repeat']
+    Timer(repeat_time, get_current_weather).start()
     if (return_request := send_weather_request()).status_code == 200:
         request = return_request.json()['current']
         if request:

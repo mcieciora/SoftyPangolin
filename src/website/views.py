@@ -35,9 +35,15 @@ def setup():
     if request.method == 'POST':
         appid = request.form.get('appid')
         language = request.form.get('lang')
+        plan = request.form.get('plan')
+
+        plans = {
+            'free': 120,
+            'startup': 60
+        }
 
         if get(f'https://api.openweathermap.org/data/2.5/onecall?appid={appid}&lat=0&lon=0').status_code == 200:
-            db.session.add(Settings(appid=appid, lang=language))
+            db.session.add(Settings(appid=appid, lang=language, repeat=plans[plan]))
             db.session.commit()
             flash('Settings saved!', category='success')
             get_current_weather()

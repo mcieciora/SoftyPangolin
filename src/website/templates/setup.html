@@ -1,16 +1,40 @@
 {% extends "base.html" %} {% block content%}
-<form method="POST">
-  <br/><br/>
-  <label>Application ID:</label>
-  <input type="text" id="appid" name="appid">
-  <br/>
-  <label for="lang">Choose language:</label>
-  <select name="lang" id="lang">
-    <option value="en">en</option>
-    <option value="pl">pl</option>
-    <option value="de">de</option>
-  </select>
-  <br/>
-  <button type="submit">Save</button>
-</form>
+<div class="container">
+  <form method="POST">
+  <div class="row">
+    <div class="col-25">
+      <label for="appid">Application ID</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="appid" name="appid" placeholder="api id ...">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="plan">Plan</label>
+    </div>
+    <div class="col-75">
+      <select id="plan" name="plan">
+        <option value="free">Free (Up to 1 call per 2 minutes)</option>
+        <option value="startup">Startup (1 call every minute)</option>
+      </select>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="lang">Language</label>
+    </div>
+    <div class="col-75">
+      <select id="lang" name="lang">
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+        <option value="pl">Polish</option>
+      </select>
+    </div>
+  </div>
+    <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</div>
 {% endblock %}
