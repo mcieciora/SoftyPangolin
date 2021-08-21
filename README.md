@@ -21,7 +21,7 @@ Werkzeug~=1.0.1
 SQLAlchemy~=1.3.23  
 requests==2.25.1  
 ```  
-  See: [How to install modules](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing) \  
+See: [How to install modules](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing)  
 See: [How to install modules from requirements.txt](https://packaging.python.org/tutorials/installing-packages/#requirements-files)    
   
   
@@ -29,7 +29,7 @@ See: [How to install modules from requirements.txt](https://packaging.python.org
 WIP  
     
 <h3>Lazy installation (not implemented yet; please use step-by-step guide instead)</h3>    
-Simply run    
+Simply run
    
 ```  
 git clone -b latest_release https://github.com/mcieciora/SoftyPangolin.git  
@@ -51,18 +51,21 @@ sudo nano /lib/systemd/system/softy_pangolin.service
   
 <h4>3. Write into <i>/lib/systemd/system</i></h4>    
   
-```ini [Unit] 
+```ini
+[Unit] 
 Description=Softy Pangolin Service 
-After=multi-user.target    
- [Service] 
- Type=idle 
- User=<YOUR_USER_NAME> 
- Group=<YOUR_USER_GROUP> 
- ExecStart=<PATH_TO_PYTHON> <PATH TO CLONED REPOSITORY>/main.py 
- Restart=always    
- [Install] 
- WantedBy=multi-user.target 
- ``` 
+After=multi-user.target
+
+[Service] 
+Type=idle 
+User=<YOUR_USER_NAME> 
+Group=<YOUR_USER_GROUP> 
+ExecStart=<PATH_TO_PYTHON> <PATH TO CLONED REPOSITORY>/main.py 
+Restart=always
+ 
+[Install] 
+WantedBy=multi-user.target 
+``` 
 <h4>4. Set access rights</h4>    
   
 ```
