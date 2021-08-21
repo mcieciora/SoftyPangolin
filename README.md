@@ -89,8 +89,8 @@ First, you need to create free account on [openweathermap.org](https://home.open
   
 <h3>Setup Softy Pangolin</h3>  
   
-Fill <i>Application ID</i> field with just generated API key. \  
-Choose plan, that is available on your openweathermap account. If you did not buy any plan then probably you can leave this option set to <i>Free</i> on default. \  
+Fill <i>Application ID</i> field with just generated API key. 
+Choose plan, that is available on your openweathermap account. If you did not buy any plan then probably you can leave this option set to <i>Free</i> on default.  
 Choose language from available: English, Deutsch, Polish  
   
 ![setup.png](doc/setup.PNG)  
