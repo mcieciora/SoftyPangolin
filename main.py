@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-from website import create_app
-from website.utils import get_last_data_from_model, get_current_weather
-from website.models import Settings
+from src.website import create_app
+from src.website.utils import get_last_data_from_model, get_current_weather
+from src.website.models import Settings
 
 app = create_app()
 
