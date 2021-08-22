@@ -23,20 +23,15 @@ requests==2.25.1
 ```  
 See: [How to install modules](https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing)  
 See: [How to install modules from requirements.txt](https://packaging.python.org/tutorials/installing-packages/#requirements-files)    
-  
-  
-<h3>Docker container</h3>    
-WIP  
+
     
-<h3>Lazy installation (not implemented yet; please use step-by-step guide instead)</h3>    
-Simply run
+<h3>Docker container</h3>    
+Get softy_pangolin container with:
    
 ```  
-git clone -b latest_release https://github.com/mcieciora/SoftyPangolin.git  
-cd SoftyPangolin  
-sudo python3 setup.py  
+docker run -d -p 5001:8001 --name softy_pangolin mcieciora/softy_pangolin:latest   
 ```    
- <h3>Step-by-step installation</h3>    
+<h3>Step-by-step installation</h3>    
 <h4>1. Clone repository</h4>    
   
 ```  
