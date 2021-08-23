@@ -7,7 +7,7 @@ Softy Pangolin is a <i>weather app</i> powered by [openweathermap.org](https://h
 The name "pangolin" comes from the Malay word <i>pengguling</i>, meaning "one who rolls up" and stands for a wild animal, which physical appearance is marked by large, hardened, overlapping, plate-like scales.   
 Though pangolins are protected by an international ban on their trade and have their sad place in Zoological Society of London's list of evolutionarily distinct and endangered mammals, pangolins are threatened by poaching (for their meat and scales, which are used in traditional Chinese medicine) and heavy deforestation of their natural habitats. <b>They are the most trafficked mammals in the world</b>. This animal was chosen as mascot for this project to raise awareness, that even almost extinct animal may be still used by people to make money mostly in criminal way or satisfy illogical and unscientific beliefs.  
     
-![pangolin.png](doc/pangolin.PNG)\  
+![pangolin.png](doc/pangolin.PNG) \
 <i>source:</i> [Pangolin - Wikipedia](https://en.wikipedia.org/wiki/Pangolin)  
 <h2>How to install</h2>  
 <h3>Prerequisites</h3>    
