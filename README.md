@@ -35,7 +35,7 @@ docker run -d -p 5001:8001 --name softy_pangolin mcieciora/softy_pangolin:latest
 <h4>1. Clone repository</h4>    
   
 ```  
-git clone -b latest_release https://github.com/mcieciora/SoftyPangolin.git  
+git clone https://github.com/mcieciora/SoftyPangolin.git  
 cd SoftyPangolin  
 ```  
 <h4>2. Create service file in <i>/lib/systemd/system</i></h4>    
