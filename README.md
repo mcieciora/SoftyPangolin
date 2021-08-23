@@ -9,6 +9,10 @@ Though pangolins are protected by an international ban on their trade and have t
     
 ![pangolin.png](doc/pangolin.PNG) \
 <i>source:</i> [Pangolin - Wikipedia](https://en.wikipedia.org/wiki/Pangolin)  
+
+<h3>Discontinuation note</h3>
+This project is currently discontinued, because author has no further plans for application development. Similar projects may be started in the future, but as far as this note is available here, probably none did.
+
 <h2>How to install</h2>  
 <h3>Prerequisites</h3>    
 Python version: >= 3.9  
@@ -97,8 +101,5 @@ After this one simple step you shall be able to see current weather in your exac
 ![weather_app.png](doc/weather_app.PNG)  
   
 Happy Pangoling ;)  
-
-<h3>Discontinuation note</h3>
-This project is currently discontinued, because author has no further plans for application development. Similar projects may be started in the future, but as far as this note is available here, probably none did.
 
 <i>mcieciora</i>
