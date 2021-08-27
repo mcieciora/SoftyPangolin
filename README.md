@@ -33,9 +33,12 @@ See: [How to install modules from requirements.txt](https://packaging.python.org
 Get softy_pangolin container with:
    
 ```  
-docker run -d -p 5001:8001 --name softy_pangolin mcieciora/softy_pangolin:latest   
+docker run -d -p 8000:8000 --name softy_pangolin mcieciora/softy_pangolin:latest   
 ```    
-<h3>Step-by-step installation</h3>    
+<h3>Step-by-step installation</h3>
+
+Supported OS: Ubuntu 20.04
+
 <h4>1. Clone repository</h4>    
   
 ```  
